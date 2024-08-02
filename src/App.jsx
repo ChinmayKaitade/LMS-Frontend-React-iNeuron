@@ -1,7 +1,11 @@
 import "./App.css";
 
 function App() {
-  return <>LMS Project</>;
+  return (
+    <>
+      LMS PROJECT
+    </>
+  );
 }
 
 export default App;
