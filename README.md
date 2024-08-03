@@ -1,6 +1,6 @@
 # LMS Frontend
 
-### Setup instruction
+### Setup Instruction
 
 1. Clone the project.
 
@@ -26,7 +26,7 @@
     npm run dev
 ```
 
-### Setup instructions for tailwind
+### Setup Instructions for Tailwind
 
 [Tailwind Official Docs](https://tailwindcss.com/docs/installation)
 
@@ -63,7 +63,7 @@
     [require("daisyui"), require("@tailwindcss/line-clamp")]
 ```
 
-### Adding plugins and dependencies
+### Adding Plugins and Dependencies
 
 ```
 npm install @reduxjs/toolkit react-redux react-router-dom react-icons react-chartjs-2 chart.js daisyui axios react-hot-toast @tailwindcss/line-clamp
