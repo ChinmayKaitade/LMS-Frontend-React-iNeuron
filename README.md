@@ -28,7 +28,7 @@
 
 ### Setup Instructions for Tailwind
 
-[Tailwind Official Docs](https://tailwindcss.com/docs/installation)
+[Tailwind Official Documentation](https://tailwindcss.com/docs/installation)
 
 1. Install tailwindcss.
 
