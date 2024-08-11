@@ -4,6 +4,7 @@ import { BsPersonCircle } from "react-icons/bs";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 
+import { isEmail, isValidPassword } from "../Helpers/regexMatcher";
 import HomeLayout from "../Layouts/HomeLayout";
 import { createAccount } from "../Redux/Slices/AuthSlice";
 
@@ -70,21 +71,13 @@ function Signup() {
     }
 
     // checking valid email
-    if (
-      !signupData.email.match(
-        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-      )
-    ) {
+    if (!isEmail(!signupData.email)) {
       toast.error("Invalid Enter Valid Email");
       return;
     }
 
     // checking password validation
-    if (
-      !signupData.password.match(
-        /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/
-      )
-    ) {
+    if (!isValidPassword(!signupData.password)) {
       toast.error(
         "Password Should be 6 to 16 characters long with atleast a Number and Special character"
       );
@@ -101,8 +94,7 @@ function Signup() {
     // dispatch create account action
     const response = await dispatch(createAccount(formData));
     // console.log(response)
-    if (response?.payload?.success) 
-      navigate("/");
+    if (response?.payload?.success) navigate("/");
 
     setSignupData({
       fullName: "",
