@@ -10,8 +10,11 @@ function CourseDescription() {
 
   return (
     <HomeLayout>
+      {/* Page / Parent container  */}
       <div className="min-h-[90vh] pt-12 px-20 flex flex-col items-center justify-center text-white">
+        {/* Course Card container  */}
         <div className="grid grid-cols-2 gap-10 py-10 relative">
+          {/* left part of container containing image, instructor name and no. of lectures  */}
           <div className="space-y-5">
             {/* Course Image  */}
             <img
@@ -53,7 +56,7 @@ function CourseDescription() {
             </div>
           </div>
 
-          {/* Course Description  */}
+          {/* right part of container containing course Description and course title  */}
           <div className="space-y-2 text-xl">
             <h1 className="text-3xl font-bold text-yellow-500 mb-5 text-center">
               {state?.title}
