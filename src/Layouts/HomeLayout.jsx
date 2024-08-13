@@ -34,8 +34,7 @@ function HomeLayout({ children }) {
 
     const res = await dispatch(logout());
 
-    if (res?.payload?.success)
-    navigate("/");
+    if (res?.payload?.success) navigate("/");
   }
 
   return (
@@ -72,6 +71,11 @@ function HomeLayout({ children }) {
             {isLoggedIn && role === "ADMIN" && (
               <li>
                 <Link to="/admin/dashboard">Admin Dashboard</Link>
+              </li>
+            )}
+            {isLoggedIn && role === "ADMIN" && (
+              <li>
+                <Link to="/course/create">Create New Course</Link>
               </li>
             )}
 
