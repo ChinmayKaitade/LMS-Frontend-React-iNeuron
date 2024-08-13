@@ -106,6 +106,7 @@ function HomeLayout({ children }) {
               </li>
             )}
 
+            {/* profile page link */}
             {isLoggedIn && (
               <li className="absolute bottom-4 w-[90%]">
                 <div className="w-full flex items-center justify-center">
