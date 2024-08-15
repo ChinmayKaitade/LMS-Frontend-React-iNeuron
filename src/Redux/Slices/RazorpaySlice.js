@@ -100,23 +100,25 @@ const razorpaySlice = {
     builder
       .addCase(getRazorPayId.fulfilled, (state, action) => {
         state.key = action?.payload?.key;
-      }) // getting razorpay id
+      }) // --> getting razorpay id
       .addCase(purchaseCourseBundle.fulfilled, (state, action) => {
         state.subscription_id = action?.payload?.subscription_id;
-      }) // paid subscription
+      }) // --> paid subscription
       .addCase(verifyUserPayment.fulfilled, (state, action) => {
+        // console.log(action);
         toast.success(action?.payload?.message);
         state.isPaymentVerified = action?.payload?.success;
-      }) // payment success
+      }) // --> verification for payment success
       .addCase(verifyUserPayment.rejected, (state, action) => {
+        // console.log(action)
         toast.success(action?.payload?.message);
         state.isPaymentVerified = action?.payload?.success;
-      }) // payment failed
+      }) // --> verification for payment failed
       .addCase(getPaymentRecord.fulfilled, (state, action) => {
         state.allPayments = action?.payload?.allPayments;
         state.finalMonths = action?.payload?.finalMonths;
         state.monthlySalesRecord = action?.payload?.monthlySalesRecord;
-      }); // get payment records
+      }); // --> get payment records
   },
 };
 
