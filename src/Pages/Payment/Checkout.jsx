@@ -20,10 +20,6 @@ function Checkout() {
   const subscription_id = useSelector(
     (state) => state?.razorpay?.subscription_id
   );
-  const isPaymentVerified = useSelector(
-    (state) => state?.razorpay?.isPaymentVerified
-  );
-  const userData = useSelector((state) => state?.auth?.data);
 
   // payment details object
   const paymentDetails = {
@@ -62,6 +58,7 @@ function Checkout() {
 
         const res = await dispatch(verifyUserPayment(paymentDetails));
 
+        console.log(res);
         // navigate on the basis of payment status --> success or failed payment
         res?.payload?.success
           ? navigate("/checkout/success")
