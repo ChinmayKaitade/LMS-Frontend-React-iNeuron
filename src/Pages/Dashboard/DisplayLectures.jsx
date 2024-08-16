@@ -18,6 +18,7 @@ function DisplayLectures() {
   // local state for fetching which video user is playing (current video)
   const [currentVideo, setCurrentVideo] = useState(0);
 
+  // on lecture delete 
   async function onLectureDelete(courseId, lectureId) {
     console.log(courseId, lectureId);
     await dispatch(
