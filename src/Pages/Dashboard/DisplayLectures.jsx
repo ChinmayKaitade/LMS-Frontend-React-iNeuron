@@ -18,7 +18,7 @@ function DisplayLectures() {
   // local state for fetching which video user is playing (current video)
   const [currentVideo, setCurrentVideo] = useState(0);
 
-  // on lecture delete 
+  // on lecture delete
   async function onLectureDelete(courseId, lectureId) {
     console.log(courseId, lectureId);
     await dispatch(
@@ -42,8 +42,7 @@ function DisplayLectures() {
         </div>
 
         {/* lectures create, view and delete */}
-        {(lectures && lectures.length > 0) ?
-         (
+        {lectures && lectures.length > 0 ? (
           <div className="flex justify-center gap-10 w-full">
             {/* left side section for playing video lectures and displaying course details to admin */}
             <div className="space-y-5 w-[28rem] p-2 rounded-lg shadow-[0_0_10px_black]">
@@ -115,8 +114,9 @@ function DisplayLectures() {
                 })}
             </ul>
           </div>
-        ):(
-          role && role === "ADMIN" && (
+        ) : (
+          role &&
+          role === "ADMIN" && (
             <button
               onClick={() =>
                 navigate("/course/addlecture", { state: { ...state } })
