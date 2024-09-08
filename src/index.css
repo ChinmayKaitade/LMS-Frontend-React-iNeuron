@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  margin: auto;
-  width: 1440px;
-  position: relative;
+body{
+   position: relative;
+   max-width: 1440px;
+   margin: auto;
 }
